@@ -20,9 +20,7 @@ interface Props {
 }
 
 export function MultiSelect({ categories, selected,setSelected }: Props) {
-  if(!categories) {
-    return
-  }
+  
   const inputRef = React.useRef<HTMLInputElement>(null);
   const [open, setOpen] = React.useState(false);
   // const [selected, setSelected] = React.useState<string[]>([]);
@@ -54,6 +52,7 @@ export function MultiSelect({ categories, selected,setSelected }: Props) {
     []
   );
 
+  // @ts-ignore
   const selectables = categories.filter(
     (framework) => !selected.includes(framework)
   );

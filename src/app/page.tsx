@@ -58,7 +58,7 @@ export default function Page() {
           topic: selectedTopic,
           categories: selectedCategories,
           threshold: thresholdValue,
-          interest,
+          interest: "High interest",
         },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -110,7 +110,7 @@ export default function Page() {
             onValueChange={handleThresholdValue}
           />
         </div>
-        <div className="space-y-2 mb-4">
+        {/* <div className="space-y-2 mb-4">
           <Label>Interest</Label>
           <Textarea
             className="overflow-y-hidden resize-none"
@@ -118,12 +118,12 @@ export default function Page() {
             value={interest}
             onChange={handleInterest}
           />
-        </div>
+        </div> */}
         <Button disabled={isLoading} className="w-full" onClick={onSubmit}>
           Submit
         </Button>
       </section>
-      <section className="px-8 py-4">{ReactHtmlParser(body)}</section>
+      <section className="px-8 py-4 border">{ReactHtmlParser(body)}</section>
     </main>
   );
 }
